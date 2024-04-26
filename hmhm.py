@@ -9,6 +9,7 @@ perfomer_name VARCHAR(80)
 );
 
 create table if not exists PerfomersGenre (
+id SERIAL primary key,
 genre_id INTEGER references Genre(id),
 perfomer_id INTEGER references Perfomers(id)
 );
@@ -16,8 +17,7 @@ perfomer_id INTEGER references Perfomers(id)
 create table if not exists Albums(
 id SERIAL primary key,
 name VARCHAR(60),
-realese_date date,
-perfomer_id INTEGER references Perfomers(id)
+realese_date date
 );
 
 create table if not exists PerfomersAlbum(
@@ -40,6 +40,7 @@ realese_date date
 );
 
 create table if not exists CompilationTrack(
+id SERIAL primary key,
 compilation_id INTEGER references Compilation(id),
 track_id INTEGER references Track(id)
 );
